@@ -1,0 +1,23 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyTodoMaui.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <!--<StackLayout Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">-->
+    <StackLayout Padding="30">
+        <Label Text="Minhas Tarefas" FontSize="24" />
+        <ListView x:Name="myListView" VerticalOptions="StartAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Label Text="{Binding Title}" />
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry x:Name="newTodo" />
+        <Button Text="Salvar" Clicked="OnSaveClicked"></Button>
+    </StackLayout>
+</ContentPage>
